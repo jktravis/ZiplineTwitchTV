@@ -1,22 +1,25 @@
 $(document).ready(function()
 {
 
-var twitchUsers =
-    ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff", "medrybw"];
+    var twitchUsers =
+        ["freecodecamp", "storbeck", "terakilobyte", "habathcx", "RobotCaleb", "thomasballinger", "noobs2ninjas", "beohoff", "medrybw"];
 
-var streamUrl = 'https://api.twitch.tv/kraken/streams/';
-var channelUrl = 'https://api.twitch.tv/kraken/channels/';
-var $statusList = $('#status-list');
+    var streamUrl = 'https://api.twitch.tv/kraken/streams/';
+    var channelUrl = 'https://api.twitch.tv/kraken/channels/';
+    var $statusList = $('#status-list');
+    var listTemplate = '<li><a href="$URL"><img src="$IMG" class="img-thumbnail img-circle"/> $DISPLAY_NAME</a></li>';
+    var currentListItem;
+    $statusList.empty();
 
-$statusList.empty();
-
-for (var i = 0; i < twitchUsers.length; i++)
-{
-    $.getJSON(channelUrl + twitchUsers[i], function(resp)
+    for (var i = 0; i < twitchUsers.length; i++)
     {
-        $statusList.append('<li><a href="' + resp.url + '"><img src="' + resp.logo + '" class="img-thumbnail img-circle"/> ' + resp.display_name + '</a></li>');
-    })
-}
+        $.getJSON(channelUrl + twitchUsers[i], function (resp)
+        {
+             resp.logo = resp.logo === null? 'http://lorempixel.com/60/60/' : resp.logo;
+            currentListItem = listTemplate.replace('$URL', resp.url).replace('$IMG', resp.logo).replace('$DISPLAY_NAME', resp.display_name);
+            $statusList.append(currentListItem);
+        })
+    }
 
 //for (i = 0; i < twitchUsers.length; i++)
 //{
