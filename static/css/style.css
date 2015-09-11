@@ -1,0 +1,16 @@
+ul {
+  list-style: none;
+}
+
+li {
+  padding: .5em;
+}
+
+li > a {
+  color: black;
+}
+
+li > a > img {
+  width: 60px;
+  height: 60px;
+}
