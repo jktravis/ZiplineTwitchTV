@@ -1,0 +1,27 @@
+{
+  "name": "ZiplineTwitchTV",
+  "version": "0.0.0",
+  "authors": [
+    "jktravis <joshua.travis@gmail.com>"
+  ],
+  "description": "Build a CodePen.io app that successfully reverse-engineers this: http://codepen.io/GeoffStorbeck/full/GJKRxZ.",
+  "main": "index.html",
+  "keywords": [
+    "fcc",
+    "twitch",
+    "zipline"
+  ],
+  "license": "MIT",
+  "homepage": "http://codepen.io/jktravis/pen/zvvdYe",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "static/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
