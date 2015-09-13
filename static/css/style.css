@@ -1,27 +1,7 @@
-ul {
-  list-style: none;
+.list-item {
+  margin-bottom: 20px;
 }
 
-li {
-  padding: .5em;
-  border-radius: 10px;
-}
-
-li:hover {
-  background-color: #00b3ee;
-  cursor: pointer;
-}
-
-li > a {
-  color: black;
-}
-
-li > a:hover {
-  text-decoration: none;
-  color: inherit;
-}
-
-li > a > img {
-  width: 60px;
-  height: 60px;
+.description {
+  margin-top: -20px;
 }
