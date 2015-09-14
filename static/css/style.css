@@ -1,7 +1,40 @@
-.list-item {
-  margin-bottom: 20px;
+ul {
+  list-style: none;
 }
 
-.description {
-  margin-top: -20px;
+li {
+  position: relative;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: block;
 }
+
+ul img {
+  margin-right: 1em;
+  width: 60px;
+  height: 60px;
+}
+
+.display-name {
+  position: absolute;
+  line-height: 60px;
+}
+
+.glyphicon {
+  position: absolute;
+  right: 1px;
+  top: 15px;
+  line-height: 60px;
+  font-size: 1.5em;
+}
+
+.activity:before {
+  content: '(';
+}
+.activity:after {
+  content: ')';
+}
+.activity {
+  font-size: 0.7em;
+}
+

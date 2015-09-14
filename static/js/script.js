@@ -1,20 +1,15 @@
 $(document).ready(function()
 {
-
     var twitchUsers =
         ["freecodecamp", "storbeck", "terakilobyte", "habathcx", "RobotCaleb", "thomasballinger", "noobs2ninjas", "beohoff", "medrybw"];
 
     var streamUrl = 'https://api.twitch.tv/kraken/streams/';
     var channelUrl = 'https://api.twitch.tv/kraken/channels/';
     var $statusList = $('#status-list');
-    //var listTemplate = '<li><a href="$URL"><img src="$IMG" class="img-thumbnail img-circle"/> $DISPLAY_NAME' +
-    //    '<span class="glyphicon glyphicon-$STATUS text-right"></span>$PLAYING</a></li>';
 
-    var listTemplate = '<div class="row list-item"> <div class="col-lg-2"><img src="$IMG" class="img-thumbnail img-circle"/></div>' +
-        '<div class="col-lg-8"> <a href="$URL">$DISPLAY_NAME</a> </div> <div class="col-lg-1"> <span class="glyphicon glyphicon-$STATUS"></span> </div>' +
-        '<div class="col-lg-10 col-lg-offset-2 description"> $PLAYING </div> </div>';
+    var listTemplate = '<li> <a href="$URL"><img src="$IMG" class="img-thumbnail img-circle"/> <span class="diplay-name">' +
+        '$DISPLAY_NAME</span> <span class="glyphicon glyphicon-$STATUS"></span> <span class="activity">$PLAYING</span> </a> </li>';
     var currentListItem;
-    //$statusList.empty();
 
     for (var i = 0; i < twitchUsers.length; i++)
     {
