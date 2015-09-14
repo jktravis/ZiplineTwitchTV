@@ -1,7 +1,7 @@
 $(document).ready(function()
 {
     var twitchUsers =
-        ["freecodecamp", "storbeck", "terakilobyte", "habathcx", "RobotCaleb", "thomasballinger", "noobs2ninjas", "beohoff", "medrybw", "comster404", "brunofin"];
+        ["freecodecamp", "storbeck", "terakilobyte", "habathcx", "RobotCaleb", "thomasballinger", "noobs2ninjas", "beohoff", "medrybw"];
 
     var streamUrl = 'https://api.twitch.tv/kraken/streams/';
     var channelUrl = 'https://api.twitch.tv/kraken/channels/';
@@ -11,6 +11,7 @@ $(document).ready(function()
         '$DISPLAY_NAME</span> <span class="status-icon glyphicon glyphicon-$STATUS"></span> <span class="activity">$PLAYING</span> </a> </li>';
     var currentListItem;
     var $navli = $('.nav > li');
+    var $filter = $('#filter');
 
 
     $navli.click(function(e)
@@ -18,21 +19,18 @@ $(document).ready(function()
         e.preventDefault();
         $navli.removeClass('active');
         $(this).addClass('active');
+        $filter.val('');
 
         populateTwitchList(twitchUsers, $(this).find('a').text());
     });
 
-    $('#filter').on('keyup', function()
+    $filter.on('keyup', function()
     {
         var $this = $(this);
         var filteredArray = twitchUsers.filter(function(val, index, arr)
         {
-            console.log('val.toLowerCase(): ' + val.toLowerCase());
-            console.log('$this.val().toLowerCase: ' + $this.val().toLowerCase());
             return (val.toLowerCase().indexOf($this.val().toLowerCase()) > -1);
         });
-
-        console.log(filteredArray);
 
         populateTwitchList(filteredArray, $('.active').find('a').text());
     });
