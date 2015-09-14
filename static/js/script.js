@@ -8,7 +8,7 @@ $(document).ready(function()
     var $statusList = $('#status-list');
 
     var listTemplate = '<li> <a href="$URL"><img src="$IMG" class="img-thumbnail img-circle"/> <span class="diplay-name">' +
-        '$DISPLAY_NAME</span> <span class="glyphicon glyphicon-$STATUS"></span> <span class="activity">$PLAYING</span> </a> </li>';
+        '$DISPLAY_NAME</span> <span class="status-icon glyphicon glyphicon-$STATUS"></span> <span class="activity">$PLAYING</span> </a> </li>';
     var currentListItem;
 
     for (var i = 0; i < twitchUsers.length; i++)
