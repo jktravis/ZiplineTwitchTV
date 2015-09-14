@@ -1,7 +1,7 @@
 $(document).ready(function()
 {
     var twitchUsers =
-        ["freecodecamp", "storbeck", "terakilobyte", "habathcx", "RobotCaleb", "thomasballinger", "noobs2ninjas", "beohoff", "medrybw"];
+        ["freecodecamp", "storbeck", "terakilobyte", "habathcx", "RobotCaleb", "thomasballinger", "noobs2ninjas", "beohoff", "medrybw", "comster404", "brunofin"];
 
     var streamUrl = 'https://api.twitch.tv/kraken/streams/';
     var channelUrl = 'https://api.twitch.tv/kraken/channels/';
@@ -78,9 +78,10 @@ $(document).ready(function()
                 }
 
 
-            }).fail(function()
+            }).fail(function(err)
             {
-                $statusList.append('<li>Unable to load data</li>');
+                var resp = $.parseJSON(err.responseText);
+                $statusList.append('<li>' + resp.message + '</li>');
             });
         }
     }
