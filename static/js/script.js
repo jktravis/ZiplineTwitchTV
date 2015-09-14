@@ -34,4 +34,10 @@ $(document).ready(function()
             $statusList.append('<li>Unable to load data</li>');
         });
     }
+
+    $('.nav > li').click(function()
+    {
+        $('.nav > li').removeClass('active');
+        $(this).addClass('active');
+    })
 });

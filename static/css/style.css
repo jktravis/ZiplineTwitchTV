@@ -22,7 +22,7 @@ ul img {
 
 .glyphicon {
   position: absolute;
-  right: 1px;
+  right: 1em;
   top: 15px;
   line-height: 60px;
   font-size: 1.5em;
